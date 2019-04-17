@@ -4,8 +4,8 @@
 
 <script>
 export default {
-name:BookItem,
-props:['books']
+name:'BookItem',
+props:['book']
 }
 </script>
 
