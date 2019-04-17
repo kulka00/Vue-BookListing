@@ -6,8 +6,10 @@
 export default {
 name:'Booklist',
 data(){
-    return{
+    return {
+
         title:'All books'
+        
     }
 }
 }
