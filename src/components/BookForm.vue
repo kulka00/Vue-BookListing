@@ -1,18 +1,26 @@
 <template>
-<form v-on:submit.prevent="bookSubmit(bookTitle,bookAuthor)" class=""action="#" method="post" >
-    <input v-model="bookData.bookTitle" type="text" name="title"  value="" placeholder="Book Title">
-    <input v-model="bookData.bookAuthor" type="text" name="Author"  value="" placeholder="Book Author">
+  <form v-on:submit.prevent="bookSubmit(bookData)" class action="#" method="post">
+    <input v-model="bookData.bookTitle" type="text" name="title" value placeholder="Book Title">
+    <input v-model="bookData.bookAuthor" type="text" name="Author" value placeholder="Book Author">
     <div>
-        <input type="checkbox" v-model="bookData.finishedReading">
+        <label for="finishedReading">
+            Finished Reading
+      <input type="checkbox" v-model="bookData.finishedReading">
+      </label>
     </div>
     <div>
-        <input type="radio" value="borrowed" v-model="bookData.ownership">
+        <label for="borrowed">
+            borrowed
+      <input type="radio" value="borrowed" v-model="bookData.ownership">
+        </label>
+        <label for="bought">
+            bought
+      <input type="radio" value="bought" v-model="bookData.ownership">
+        </label>
     </div>
-    <div>
-        <input type="radio" value="bought" v-model="bookData.ownership">
-    </div>
-    <button type="submit" name="button"> Add book</button>
-</form></template>
+    <button type="submit" name="button">Add book</button>
+  </form>
+</template>
 
 <script>
 export default {
@@ -20,18 +28,18 @@ export default {
   props: ["books"],
   data() {
     return {
-    bookData:{
-      bookTitle:"",
-      bookAuthor:"",
-      finishedReading:false,
-      ownership:[]
+      bookData: {
+        bookTitle: "",
+        bookAuthor: "",
+        finishedReading: false,
+        ownership: []
       }
     };
   },
   methods: {
-      bookSubmit(bookData){
-          this.$emit('add-book',bookData)
-      }
+    bookSubmit(bookData) {
+      this.$emit("add-book", bookData);
+    }
   }
 };
 </script>
