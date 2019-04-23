@@ -5,7 +5,7 @@
     <book-item v-for="book in books" :book='book'>
     </book-item>
     <hr>
-    <book-form @adbbok='appendbook'></book-form>
+    <book-form @addbook='appendbook'></book-form>
     </hr>
     </ul>
   </div>
