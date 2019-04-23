@@ -28,8 +28,8 @@ export default {
       {title: 'Amusing ourselves to Death',author: 'Neil Postman'}]
     }
   },
-  method:{
-    appendbook(bookTitle,boolAuther){
+  methods:{
+    appendBook(bookTitle,boolAuther){
       this.books.push({title:bookTitle,author:boolAuther});
     }
   }
