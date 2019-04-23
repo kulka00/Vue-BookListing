@@ -4,23 +4,33 @@
     <ul>
     <book-item v-for="book in books" :book='book'>
     </book-item>
+    <hr>
+    <book-form @adbbok='appendbook'></book-form>
+    </hr>
     </ul>
   </div>
 </template>
 
 <script>
 import BookItem from './BookItem';
+import BookForm from './BookForm';
 export default {
   name: 'BookList',
   components:{
-    BookItem
+    BookItem,
+    BookForm
   },
   data() {
     return {
       title: 'All Books',
-      books:[{title: 'self-Reliance',auther: 'Ralph Waldo Emerson'},
-      {title: 'American Gods',auther: 'Neil Geiman'},
-      {title: 'Amusing ourselves to Death',auther: 'Neil Postman'}]
+      books:[{title: 'self-Reliance',author: 'Ralph Waldo Emerson'},
+      {title: 'American Gods',author: 'Neil Geiman'},
+      {title: 'Amusing ourselves to Death',author: 'Neil Postman'}]
+    }
+  },
+  method:{
+    appendbook(bookTitle,boolAuther){
+      this.books.push({title:bookTitle,author:boolAuther});
     }
   }
 }
