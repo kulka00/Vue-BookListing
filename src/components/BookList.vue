@@ -5,7 +5,7 @@
     <book-item v-for="book in books" :book='book'>
     </book-item>
     <hr>
-    <book-form @addbook='appendbook'></book-form>
+    <book-form @addbook='appendBook'></book-form>
     </hr>
     </ul>
   </div>
@@ -29,8 +29,8 @@ export default {
     }
   },
   methods:{
-    appendBook(bookTitle,boolAuther){
-      this.books.push({title:bookTitle,author:boolAuther});
+    appendBook(bookTitle,bookAuther){
+      this.books.push({title:bookTitle,author:bookAuther});
     }
   }
 }
